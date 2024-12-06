@@ -48,7 +48,7 @@ if __name__ == "__main__":
     logger = TransactionLogger()"""
     payment_data = PaymentData(amount=100, source="tok_visa", currency = "USD")
     builder = PaymentServiceBuilder()
-    service = builder.set_logger().set_Payment_validation().set_customer_validation().set_payment_proccesor(payment_data).set_notifier(customer_data).builder() 
+    service = builder.set_logger().set_chain_of_validation().set_notifier(customer_data).builder() 
     
  
 

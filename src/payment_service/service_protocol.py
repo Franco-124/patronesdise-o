@@ -9,14 +9,18 @@ from .processors import (
     RecurringPaymentProcessorProtocol,
     RefundProcessorProtocol,
 )
+from .validators import chain_handler, P
 from .validators import CustomerValidator, PaymentDataValidator
 
 
 class PaymentServiceProtocol:
     payment_processor: PaymentProcessorProtocol
     notifier: NotifierProtocol
+    """    
     customer_validator: CustomerValidator
-    payment_validator: PaymentDataValidator
+    payment_validator: PaymentDataValidator"""
+
+    validadors: chain_handler
     logger: TransactionLogger
     refund_processor: Optional[RefundProcessorProtocol] = None
     recurring_processor: Optional[RecurringPaymentProcessorProtocol] = None
